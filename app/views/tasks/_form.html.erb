@@ -1,0 +1,5 @@
+<%= form_for(task) do |f| %>
+  <%= f.label :content, '新しいタスク' %>
+  <%= f.text_field :content %>
+  <%= f.submit '追加' %>
+<% end %>
