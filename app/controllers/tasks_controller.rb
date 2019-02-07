@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :set_message ,only:[:show, :edit, :update, :destroy]
   
   def index
-    @tasks = Task.all
+    @tasks = Task.order(id: :desc).page(params[:page]).per(8)
   end
 
   def show
@@ -42,7 +42,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    flash[:success] = 'タスクを削除しました'
+    flash[:warning] = 'タスクを削除しました'
     redirect_to tasks_url
   end
   
