@@ -1,18 +1,9 @@
 <div class="row">
   <div class="col-lg-offset-3 col-lg-6 col-sm-offset-2 col-sm-8">
     <%= form_for(task) do |f| %>
-      <% if task.errors.any? %>
-        <div class="alert alert-warning">
-          <ul>
-            <% task.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
       
       <div class="form-group">
-        <%= f.label :content, '新しいタスク' %>
+        <%= f.label :content, 'タスク' %>
         <%= f.text_field :content ,class: 'form-control' %>
       </div>
   
@@ -22,7 +13,7 @@
       </div>
       
       <div class="form-group">
-        <%= f.submit '追加' , class: "btn btn-success" %>
+        <%= f.submit '編集' , class: "btn btn-success" %>
       </div>
     <% end %>
   </div>
